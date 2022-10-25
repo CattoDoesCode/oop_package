@@ -38,7 +38,7 @@
                             <a class="nav-link active" aria-current="page" href="#" style="color:rgb(255, 124, 124)!important">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" style="color:rgb(255, 245, 228)!important">Pricing</a>
+                            <a class="nav-link" href="pricing.php" style="color:rgb(255, 245, 228)!important">Pricing</a>
                         </li>
                     </ul>
                 </div>
