@@ -35,7 +35,7 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#" style="color:rgb(255, 124, 124)!important">Home</a>
+                            <a class="nav-link active" aria-current="page" href="#" style="color:rgb(238, 105, 131)!important">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="pricing.php" style="color:rgb(133, 14, 53)!important">Pricing</a>
@@ -146,14 +146,12 @@
 
                     function calcuate_insured_shipping_cost()
                     {
-                        $original_shipping_cost = $this->calcuate_shipping_cost();
-
-                        if ($original_shipping_cost >= 0 && $original_shipping_cost <= 1) {
-                            return $original_shipping_cost + 2.45;
-                        } elseif ($original_shipping_cost >= 1.01 && $original_shipping_cost <= 3) {
-                            return $original_shipping_cost + 3.95;
-                        } elseif ($original_shipping_cost >= 3.01) {
-                            return $original_shipping_cost + 5.55;
+                        if ($this->calcuate_shipping_cost() >= 0 && $this->calcuate_shipping_cost() <= 1) {
+                            return $this->calcuate_shipping_cost() + 2.45;
+                        } elseif ($this->calcuate_shipping_cost() >= 1.01 && $this->calcuate_shipping_cost() <= 3) {
+                            return $this->calcuate_shipping_cost() + 3.95;
+                        } elseif ($this->calcuate_shipping_cost() >= 3.01) {
+                            return $this->calcuate_shipping_cost() + 5.55;
                         }
                     }
                 }
@@ -166,6 +164,12 @@
 
                 $package_3 = new InsuredPackage(18, 'M');
                 $package_3->display('Package 3');
+
+                $package_4 = new Package(10, 'T');
+                $package_4->display('Package 4');
+
+                $package_5 = new InsuredPackage(10, 'T');
+                $package_5->display('Package 5');
 
                 ?>
             </tbody>
